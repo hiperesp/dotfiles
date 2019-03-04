@@ -1,0 +1,180 @@
+;==============;
+;   POLYBAR    ;
+;  Config  by  ;
+;   hiperesp   ;
+;==============;
+
+[colors]
+background            = #000000
+background-active     = #111111
+background-enabled    = #010101
+text      = #ffffff
+text-sub  = #555555
+blue          = #0099ff
+purple        = #9900ff
+red           = #ff0099
+green         = #00ff99
+green-light   = #99ff00
+orange        = #ff9900
+
+[bar/mybar]
+width = 100%
+height = 30
+background = ${colors.background}
+foreground = ${colors.text}
+line-size = 3
+line-color = ${colors.blue}
+padding-left = 2
+padding-right = 2
+module-margin-left = 2
+module-margin-right = 0
+;font-0 = fixed:pixelsize=10;1
+font-0 = "xos4 Terminess Powerline:pixelsize=10;1"
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = "Wuncon Siji:pixelsize=10;1"
+font-3 = FontAwesome:size=7
+modules-left = i3
+modules-center = volume
+modules-right = eth filesystem memory cpu temperature date startmenu
+tray-position = right
+tray-padding = 2
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+mount-0 = /
+label-mounted = fs %{F#995500}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.text-sub}
+label-mounted-underline = ${colors.orange}
+label-unmounted-underline = ${colors.orange}
+
+[module/bspwm]
+type = internal/bspwm
+label-focused = %index%
+label-focused-background = ${colors.background-enabled}
+label-focused-underline = ${colors.blue}
+label-focused-padding = 2
+label-occupied = %index%
+label-occupied-background = ${colors.background-active}
+label-occupied-padding = 2
+label-urgent = %index%!
+label-urgent-background = ${colors.red}
+label-urgent-padding = 2
+label-empty = %index%
+label-empty-foreground = ${colors.text-sub}
+label-empty-padding = 2
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+label-mode-padding = 2
+label-mode-foreground = ${colors.text}
+label-mode-background = ${colors.blue}
+label-focused = %index%
+label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-padding = ${module/bspwm.label-focused-padding}
+label-unfocused = %index%
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+label-urgent = %index%
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix =
+format-prefix-foreground = ${colors.text-sub}
+format-underline = ${colors.red}
+label = cpu:%percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix =
+format-prefix-foreground = ${colors.text-sub}
+label = ram: %percentage_used%%
+label-underline = ${colors.red}
+
+[module/eth]
+type = internal/network
+interface = enp2s0
+interval = 3.0
+format-connected-underline = ${colors.green}
+format-connected-prefix =
+format-connected-prefix-foreground = ${colors.text-sub}
+label-connected = eth: %local_ip%
+format-disconnected =
+
+[module/date]
+type = internal/date
+interval = 5
+date =
+date-alt = "%d-%m-%Y "
+time = %H:%M
+time-alt = %H:%M:%S
+format-prefix =
+format-prefix-foreground = ${colors.text-sub}
+format-underline = ${colors.green-light}
+
+label = %date%%time%
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+format = <label>
+format-underline = ${colors.red}
+format-warn = <label-warn>
+format-warn-underline = ${colors.blue}
+label = "cpu %temperature-c%"
+label-warn = CPU %temperature-c%
+label-warn-foreground = ${colors.purple}
+
+[module/volume]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1b.0.analog-stereo
+use-ui-max = true
+interval = 5
+format-volume = Volume: <label-volume>
+format-volume-underline = ${colors.blue}
+label-muted = "Sem Áudio"
+label-muted-foreground = ${colors.text-sub}
+label-muted-underline = ${colors.red}
+
+[module/startmenu]
+type = custom/menu
+expand-right = false
+format-spacing = 0
+label-open = "  Start  "
+label-open-background = ${colors.background-enabled}
+label-open-foreground = ${colors.text}
+label-open-underline = ${colors.purple}
+label-close = "  Finish  "
+label-close-background = ${colors.background-active}
+label-close-foreground = ${colors.text}
+label-close-underline = ${colors.purple}
+label-separator = "|"
+label-separator-background = ${colors.background-enabled}
+label-separator-foreground = ${colors.text-sub}
+label-separator-underline = ${colors.purple}
+menu-0-0 = "  Logout  "
+menu-0-0-exec = i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
+menu-0-0-background = ${colors.background-enabled}
+menu-0-0-underline = ${colors.purple}
+menu-0-1 = "  Lock  "
+menu-0-1-exec = exec ~/.config/hiperesp/lock.sh
+menu-0-1-background = ${colors.background-enabled}
+menu-0-1-underline = ${colors.purple}
+
+[settings]
+screenchange-reload = true
