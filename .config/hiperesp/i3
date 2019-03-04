@@ -2,5 +2,4 @@
 # ESSE ARQUIVO bg.png É O BACKGROUND DA TELA DE LOGIN
 # O BACKGROUND ORIGINAL APARECE DEPOIS DE ABRIR O TERMINAL
 exec --no-startup-id feh --bg-fill ~/Imagens/bg.png & disown
-exec --no-startup-id polybar -r mybar & disown
 compton & disown
