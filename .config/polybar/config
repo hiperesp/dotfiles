@@ -35,7 +35,7 @@ font-2 = "Wuncon Siji:pixelsize=10;1"
 font-3 = FontAwesome:size=7
 modules-left = i3
 modules-center = volume
-modules-right = eth filesystem memory cpu temperature date startmenu
+modules-right = eth memory cpu date startmenu
 tray-position = right
 tray-padding = 2
 cursor-click = pointer
@@ -167,14 +167,32 @@ label-separator = "|"
 label-separator-background = ${colors.background-enabled}
 label-separator-foreground = ${colors.text-sub}
 label-separator-underline = ${colors.purple}
-menu-0-0 = "  Logout  "
-menu-0-0-exec = i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
+
+menu-0-0 = "  AFK mode  "
 menu-0-0-background = ${colors.background-enabled}
 menu-0-0-underline = ${colors.purple}
-menu-0-1 = "  Lock  "
-menu-0-1-exec = exec ~/.config/hiperesp/lock.sh
+menu-0-0-exec = menu-open-1
+menu-1-0 = "  Lock  "
+menu-1-0-exec = exec ~/.config/hiperesp/lock.sh
+menu-1-0-background = ${colors.background-enabled}
+menu-1-0-underline = ${colors.purple}
+menu-1-1 = "  Logout  "
+menu-1-1-exec = i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
+menu-1-1-background = ${colors.background-enabled}
+menu-1-1-underline = ${colors.purple}
+
+menu-0-1 = "  Resolution  "
 menu-0-1-background = ${colors.background-enabled}
 menu-0-1-underline = ${colors.purple}
+menu-0-1-exec = menu-open-2
+menu-2-0 = "  640x480  "
+menu-2-0-exec = exec ~/.config/hiperesp/res/640x480
+menu-2-0-background = ${colors.background-enabled}
+menu-2-0-underline = ${colors.purple}
+menu-2-1 = "  default  "
+menu-2-1-exec = exec ~/.config/hiperesp/res/default
+menu-2-1-background = ${colors.background-enabled}
+menu-2-1-underline = ${colors.purple}
 
 [settings]
 screenchange-reload = true
