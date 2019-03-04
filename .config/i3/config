@@ -24,7 +24,7 @@ font pango:monospace 8
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
 # X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesnâ€™t scale on retina/hidpi displays.
+# font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -140,10 +140,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the windowâ€™s width.
-        # Pressing right will grow the windowâ€™s width.
-        # Pressing up will shrink the windowâ€™s height.
-        # Pressing down will grow the windowâ€™s height.
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
@@ -164,6 +164,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 bindsym Control+$mod+l exec i3lock
 
+for_window [class="^.*"] border pixel 1
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # BLOCO COMENTADO, POIS O POLYBAR SUBSTITUI A BARRA DO i3
@@ -175,4 +177,5 @@ bindsym Control+$mod+l exec i3lock
 # HIPERESP
 exec --no-startup-id ~/.config/hiperesp/i3
 exec --no-startup-id polybar -r mybar & disown
+
 
