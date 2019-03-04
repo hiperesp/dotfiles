@@ -174,4 +174,3 @@ bindsym Control+$mod+l exec i3lock
 
 # HIPERESP
 exec --no-startup-id ~/.config/hiperesp/i3
-exec --no-startup-id polybar -r mybar
