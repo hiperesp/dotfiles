@@ -3,19 +3,19 @@
 ;  Config  by  ;
 ;   hiperesp   ;
 ;==============;
+[position]
+bottom = false
 
 [colors]
-background            = #000000
-background-active     = #111111
-background-enabled    = #010101
+background		= #55555555
+background-enabled	= #55fdfdfd
 text      = #ffffff
-text-sub  = #555555
-blue          = #0099ff
-purple        = #9900ff
-red           = #ff0099
-green         = #00ff99
-green-light   = #99ff00
-orange        = #ff9900
+blue		= #0099ff
+purple		= #9900ff
+red		= #ff0099
+green		= #00ff99
+green-light	= #99ff00
+orange		= #ff9900
 
 [bar/mybar]
 width = 100%
@@ -24,13 +24,13 @@ background = ${colors.background}
 foreground = ${colors.text}
 line-size = 3
 line-color = ${colors.blue}
-padding-left = 2
-padding-right = 2
+padding-left = 0
+padding-right = 0
 module-margin-left = 2
 module-margin-right = 0
-font-0 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-1 = "Wuncon Siji:pixelsize=10;1"
-font-2 = FontAwesome:size=7
+font-0 = Bahnschrift:size=8:antialias=true
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = "Wuncon Siji:pixelsize=10;1"
 font-3 = "xos4 Terminess Powerline:pixelsize=10;1"
 font-4 = fixed:pixelsize=10;1
 modules-left = i3
@@ -40,6 +40,7 @@ tray-position = right
 tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
+bottom = ${position.bottom}
 
 [module/filesystem]
 type = internal/fs
@@ -47,7 +48,7 @@ interval = 25
 mount-0 = /
 label-mounted = fs %{F#995500}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.text-sub}
+label-unmounted-foreground = ${colors.text}
 label-mounted-underline = ${colors.orange}
 label-unmounted-underline = ${colors.orange}
 
@@ -58,13 +59,13 @@ label-focused-background = ${colors.background-enabled}
 label-focused-underline = ${colors.blue}
 label-focused-padding = 2
 label-occupied = %index%
-label-occupied-background = ${colors.background-active}
+label-occupied-background = ${colors.background-enabled}
 label-occupied-padding = 2
 label-urgent = %index%!
 label-urgent-background = ${colors.red}
 label-urgent-padding = 2
 label-empty = %index%
-label-empty-foreground = ${colors.text-sub}
+label-empty-foreground = ${colors.text}
 label-empty-padding = 2
 
 [module/i3]
@@ -93,7 +94,7 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 type = internal/cpu
 interval = 2
 format-prefix =
-format-prefix-foreground = ${colors.text-sub}
+format-prefix-foreground = ${colors.text}
 format-underline = ${colors.red}
 label = cpu:%percentage:2%%
 
@@ -101,7 +102,7 @@ label = cpu:%percentage:2%%
 type = internal/memory
 interval = 2
 format-prefix =
-format-prefix-foreground = ${colors.text-sub}
+format-prefix-foreground = ${colors.text}
 label = ram: %percentage_used%%
 label-underline = ${colors.red}
 
@@ -111,7 +112,7 @@ interface = enp2s0
 interval = 3.0
 format-connected-underline = ${colors.green}
 format-connected-prefix =
-format-connected-prefix-foreground = ${colors.text-sub}
+format-connected-prefix-foreground = ${colors.text}
 label-connected = eth: %local_ip%
 format-disconnected =
 
@@ -123,7 +124,7 @@ date-alt = "%d-%m-%Y "
 time = %H:%M
 time-alt = %H:%M:%S
 format-prefix =
-format-prefix-foreground = ${colors.text-sub}
+format-prefix-foreground = ${colors.text}
 format-underline = ${colors.green-light}
 
 label = %date%%time%
@@ -145,10 +146,12 @@ type = internal/pulseaudio
 sink = alsa_output.pci-0000_00_1b.0.analog-stereo
 use-ui-max = true
 interval = 5
-format-volume = Volume: <label-volume>
+format-volume = "ㅤ   Volume: <label-volume>   "
 format-volume-underline = ${colors.blue}
-label-muted = "Sem Áudio"
-label-muted-foreground = ${colors.text-sub}
+format-volume-background = ${colors.background-enabled}
+label-muted = " Sem Áudio "
+label-muted-background = ${colors.background}
+label-muted-foreground = ${colors.text}
 label-muted-underline = ${colors.red}
 
 [module/startmenu]
@@ -160,12 +163,12 @@ label-open-background = ${colors.background-enabled}
 label-open-foreground = ${colors.text}
 label-open-underline = ${colors.purple}
 label-close = "  Finish  "
-label-close-background = ${colors.background-active}
+label-close-background = ${colors.background-enabled}
 label-close-foreground = ${colors.text}
 label-close-underline = ${colors.purple}
 label-separator = "|"
 label-separator-background = ${colors.background-enabled}
-label-separator-foreground = ${colors.text-sub}
+label-separator-foreground = ${colors.text}
 label-separator-underline = ${colors.purple}
 
 menu-0-0 = "  AFK mode  "
@@ -196,4 +199,3 @@ menu-2-1-underline = ${colors.purple}
 
 [settings]
 screenchange-reload = true
-
