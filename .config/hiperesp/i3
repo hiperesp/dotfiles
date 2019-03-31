@@ -1,6 +1,8 @@
 # AUTOEXEC DO i3
 # ESSE ARQUIVO bg.png É O BACKGROUND DA TELA DE LOGIN
 # O BACKGROUND ORIGINAL APARECE DEPOIS DE ABRIR O TERMINAL
-exec --no-startup-id feh --bg-fill ~/Imagens/bg.png & disown
-exec setxkbmap -model abnt2 -layout br -variant abnt2
+# exec feh --bg-fill ~/Imagens/bg.png & disown
+
+exec feh --bg-fill ~/Imagens/rock_neon_smoke_130867_1920x1080.jpg & disown
+exec setxkbmap -model abnt2 -layout br -variant abnt2 & disown
 compton & disown
