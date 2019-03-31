@@ -1,7 +1,9 @@
 # ESSE ARQUIVO É O AUTOEXEC DO TERMINAL
 # QUANDO ELE É ABERTO, ELE MODIFICA O BACKGROUND E MOSTRA ESSE TEXTO
 
-exec feh --bg-fill ~/Imagens/brandon-lam-29892-unsplash.jpg & disown
+# exec feh --bg-fill ~/Imagens/brandon-lam-29892-unsplash.jpg & disown
+# exec feh --bg-fill ~/Imagens/rock_neon_smoke_130867_1920x1080.jpg & disown
+
 echo "
   ░░██░ ██░  ██▓ ██▓███  ▓█████  ██▀███  ▓█████   ██████  ██▓███
    ░░██░ ██▒▓██▒▓██░  ██▒▓█   ▀ ▓██ ▒ ██▒▓█   ▀ ▒██    ▒ ▓██░  ██▒
