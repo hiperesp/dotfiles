@@ -1,0 +1,14 @@
+[2019-10-28 17:18:20.470] [sharedprocess] [info] main {"machineId":"ee3d8d0351a44a28abcbd41a33f63403f0be9cbafa04d495079fa0d10b122d3c","windowId":2}
+[2019-10-28 17:18:40.176] [sharedprocess] [info] Installing extension: bceskavich.theme-dracula-at-night
+[2019-10-28 17:18:40.571] [sharedprocess] [info] Downloaded extension: bceskavich.theme-dracula-at-night /tmp/b86ba6fd-b253-4779-81e8-ec35647c6a5f
+[2019-10-28 17:18:40.990] [sharedprocess] [info] Extracted extension to /home/hiperesp/.vscode-oss/extensions/.bceskavich.theme-dracula-at-night-2.5.0: bceskavich.theme-dracula-at-night
+[2019-10-28 17:18:40.993] [sharedprocess] [info] Renamed to /home/hiperesp/.vscode-oss/extensions/bceskavich.theme-dracula-at-night-2.5.0
+[2019-10-28 17:18:40.995] [sharedprocess] [info] Installation completed. bceskavich.theme-dracula-at-night
+[2019-10-28 17:18:41.048] [sharedprocess] [info] Extensions installed successfully: bceskavich.theme-dracula-at-night
+[2019-10-28 17:18:52.225] [sharedprocess] [info] Installing extension: pkief.material-icon-theme
+[2019-10-28 17:18:52.579] [sharedprocess] [info] Downloaded extension: pkief.material-icon-theme /tmp/fb0c4530-8019-445d-b025-1847618a9f76
+[2019-10-28 17:18:55.156] [sharedprocess] [info] Extracted extension to /home/hiperesp/.vscode-oss/extensions/.pkief.material-icon-theme-3.9.1: pkief.material-icon-theme
+[2019-10-28 17:18:55.156] [sharedprocess] [info] Renamed to /home/hiperesp/.vscode-oss/extensions/pkief.material-icon-theme-3.9.1
+[2019-10-28 17:18:55.158] [sharedprocess] [info] Installation completed. pkief.material-icon-theme
+[2019-10-28 17:18:55.203] [sharedprocess] [info] Extensions installed successfully: pkief.material-icon-theme
+[2019-10-28 17:19:00.456] [sharedprocess] [info] Starting to clean up unused language packs.

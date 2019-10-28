@@ -1,0 +1,23 @@
+{
+   "background": {
+      "persistent": true,
+      "scripts": [ "src/background.js" ]
+   },
+   "description": "Share the screen from your computer on Discord.",
+   "externally_connectable": {
+      "matches": [ "*://discordapp.com/*", "*://*.discordapp.com/*", "*://*.discord.co/*", "*://localhost/*" ]
+   },
+   "icons": {
+      "128": "icons/128.png",
+      "16": "icons/16.png",
+      "26": "icons/26.png",
+      "48": "icons/48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuPQIOQrDxRjTlQIufSUN5hAKN3pxmLFqg905pynbZ8TjtbXgyvVxhwlIDaO1HD9SKJVm+h0cxi5Z287lxHTtIvuktuU+MbZqdFdwUUBv5YdvLhKI5tZz5rkw9XmfPaXiSWv6InHuS7gX0TKVkumnl66JC6fvBCE358WKuK1I+JR7IJxWPVvkTMKTknFrHQG03jtH+cmiGUaPrzNQtn7iw0VJkq6A2vUqiuNDLp1rOvMdBtToUqgyVu5OEmLtKjqiIJBt+8GFKceqI1XR3QMCOZk0RRfZ8CmmQfxBqjoQqBZpWHw29NBxKsiPd/6/iSPtFdbCK5hetc7EUmB4sUe5JQIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "34",
+   "name": "Discord Screen Sharing",
+   "permissions": [ "desktopCapture" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.0.4"
+}
