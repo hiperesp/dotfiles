@@ -80,7 +80,8 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# bindsym $mod+w layout tabbed
+bindsym $mod+w sticky toggle
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -170,6 +171,14 @@ bindsym Control+$mod+l exec i3lock
 
 for_window [class="^.*"] border pixel 0
 border_radius 4
+
+
+for_window [class="scrcpy"] floating enable
+for_window [class="scrcpy"] move absolute position 1024 px 100 px
+for_window [class="scrcpy"] sticky enable
+
+bindsym $mod+Shift+a exec "killall scrcpy || scrcpy --max-size 600"
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
